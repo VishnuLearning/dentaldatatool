@@ -1,0 +1,8 @@
+<div class="annotation" *ngIf="annotation!=undefined"
+    style.left="{{getLeft()}}px"
+    style.top="{{annotation.top}}px"
+    style.width="{{annotation.right - annotation.left}}px"
+    style.height="{{annotation.bottom - annotation.top}}px"
+>
+<span>{{annotation.caption}}</span>
+</div>

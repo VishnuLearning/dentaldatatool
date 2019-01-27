@@ -1,0 +1,8 @@
+<div #container id="board-container">
+  <div #scratchpad id="scratchpad" 
+       [style.visibility]="scratchon" style.top="{{starty}}px" 
+       style.left="{{startx}}px" style.width="{{scratchwidth}}px" style.height="{{scratchheight}}px">
+
+  </div>
+  <app-annotation class="annotation" *ngFor="let annotation of annotations" [annotation]="annotation"></app-annotation>
+</div>

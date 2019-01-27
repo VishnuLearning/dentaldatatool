@@ -1,0 +1,33 @@
+.board {
+    position:relative;
+}
+
+.board-container {
+    height:100%;
+}
+
+#annotation-board {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+}
+
+#image-details {
+    position:relative;
+}
+
+.ut-container {
+    display: flex; /* or inline-flex */
+    flex-direction: row;
+    flex-wrap: nowrap;
+}
+
+.board {
+    width:80%;
+}
+
+.details {
+    width:20%;
+}
