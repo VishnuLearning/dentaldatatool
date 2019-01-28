@@ -4,8 +4,11 @@
   </div>
   <div class="ut-container">
     <div class="board" id="board" #board>
-      <app-imagedetails id="image-details" #annotationImage (setup)="bootstrapAnnotations($event)"></app-imagedetails>
-      <app-annotation-board id="annotation-board" #annotationBoard [left]="left" [top]="top"></app-annotation-board>
+      <app-imagedetails id="image-details" #annotationImage 
+                 (setup)="bootstrapAnnotations($event)"></app-imagedetails>
+      <app-annotation-board id="annotation-board" #annotationBoard
+                 [left]="left" [top]="top">
+      </app-annotation-board>
     </div>
     <div class="details">
       <app-annotation-list #annotationList (newannotation)="bootstrapNewAnnotation()"></app-annotation-list>

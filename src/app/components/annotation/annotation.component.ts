@@ -11,10 +11,28 @@ export class AnnotationComponent implements OnInit {
   @Input() annotation:Annotation;
   @Input() imageWidth:number;
   @Input() imageHeight:number;
+  
+  
+  public get width() : number {
+    return (this.annotation.right - this.annotation.left)*this.imageWidth;
+  }
+  
+  public get height() : number {
+    return (this.annotation.bottom - this.annotation.top)*this.imageHeight;
+  }
+
+  public get left() : number {
+    return (this.annotation.left)*this.imageWidth;
+  }
+
+  public get top() : number {
+    return (this.annotation.top)*this.imageHeight;
+  }
 
   constructor() {
     
-   }
+  }
+
 
   ngOnInit() {
     console.log(this.annotation.caption);

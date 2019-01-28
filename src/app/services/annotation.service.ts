@@ -21,6 +21,7 @@ export class AnnotationService {
   addAnnotation(l:number, t:number, r:number, b:number, c:string):void {
     let a:Annotation = new Annotation(l, b, r, t, c);
     this.annotations.push(a);
+    console.log(l, t, r, b);
   }
 
 }

@@ -23,6 +23,15 @@ export class AnnotationBoardComponent implements OnInit {
   @Input() top:number;
   @Input() left:number;
 
+  
+  public get width() : number {
+    return this.containerDiv.nativeElement.offsetWidth;
+  }
+  public get height() : number {
+    return this.containerDiv.nativeElement.offsetHeight;
+  }
+  
+
   constructor(private annotationService: AnnotationService) { }
 
   ngOnInit() {
@@ -51,6 +60,12 @@ export class AnnotationBoardComponent implements OnInit {
     console.log("scratch on");
   }
 
+  @HostListener('window:resize', ['$event'])
+  onResize(event) {
+    //this.width = this.containerDiv.nativeElement.offsetWidth;
+    //this.height = this.containerDiv.nativeElement.offsetHeight;
+  }
+
   disableScratchPad() {
     this.scratchon = "hidden";
     this.scratchwidth = 0;
@@ -66,7 +81,13 @@ export class AnnotationBoardComponent implements OnInit {
       this.mouseDown = false;
       let t = prompt("Caption");
       console.log(this.startx, this.starty, this.scratchwidth, this.scratchheight);
-      this.annotationService.addAnnotation(this.startx, this.starty, this.startx+this.scratchwidth, this.starty+this.scratchheight, t);
+
+      this.annotationService.addAnnotation(
+        this.startx/this.width, this.starty/this.height, 
+        (this.startx+this.scratchwidth)/this.width, 
+        (this.starty+this.scratchheight)/this.height,
+        t);
+
       this.disableScratchPad();
     }
     else {

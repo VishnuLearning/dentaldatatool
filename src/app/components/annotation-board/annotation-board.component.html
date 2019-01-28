@@ -4,5 +4,9 @@
        style.left="{{startx}}px" style.width="{{scratchwidth}}px" style.height="{{scratchheight}}px">
 
   </div>
-  <app-annotation class="annotation" *ngFor="let annotation of annotations" [annotation]="annotation"></app-annotation>
+  <app-annotation class="annotation" *ngFor="let annotation of annotations" 
+                 [annotation]="annotation"
+                 [imageWidth]="width"
+                 [imageHeight]="height">
+  </app-annotation>
 </div>
