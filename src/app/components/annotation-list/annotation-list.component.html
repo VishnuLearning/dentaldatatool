@@ -1,5 +1,9 @@
-
 <button mat-raised-button color="primary" (click)="addAnnotation()">Add Annotation</button>
 <mat-list role="list">
-    <mat-list-item role="listitem" *ngFor="let annotation of annotations">{{annotation.caption}}</mat-list-item>
+    <mat-list-item role="listitem" *ngFor="let annotation of annotations">
+        <mat-form-field class="example-full-width">
+            <input matInput placeholder="Details" [(value)]="annotation.caption" (change)="editCaption(annotation)">
+        </mat-form-field>
+        <button mat-mini-fab>X</button>
+    </mat-list-item>
 </mat-list>

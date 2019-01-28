@@ -4,8 +4,10 @@ export class Annotation {
     right: number;
     top: number;
     bottom: number;
+    id:number;
 
-    constructor(l:number=0, b:number=0, r:number=0, t:number=0, c:string="Add Caption") {
+    constructor(id:number, l:number=0, b:number=0, r:number=0, t:number=0, c:string="Add Caption") {
+        this.id = id;
         this.left = l;
         this.right = r;
         this.top = t;
