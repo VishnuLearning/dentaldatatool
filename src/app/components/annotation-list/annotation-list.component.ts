@@ -11,8 +11,6 @@ export class AnnotationListComponent implements OnInit {
 
   annotations: Annotation[];
 
-  @Output() newannotation = new EventEmitter();
-
   constructor(private annotationService: AnnotationService) { }
 
 
@@ -21,10 +19,6 @@ export class AnnotationListComponent implements OnInit {
 
   getAnnotations(id:string): void {
     this.annotationService.getAnnotations(id).subscribe(x => this.annotations = x);
-  }
-
-  addAnnotation():void {
-    this.newannotation.emit();
   }
 
   editCaption(i:number):void {

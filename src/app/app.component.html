@@ -11,7 +11,8 @@
       </app-annotation-board>
     </div>
     <div class="details">
-      <app-annotation-list #annotationList (newannotation)="bootstrapNewAnnotation()"></app-annotation-list>
+      <button mat-raised-button color="primary" (click)="bootstrapNewAnnotation()">Add Annotation</button>
+      <app-annotation-list #annotationList></app-annotation-list>
     </div>
   </div>
 </div>
