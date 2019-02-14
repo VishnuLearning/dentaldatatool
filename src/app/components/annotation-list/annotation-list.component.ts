@@ -27,7 +27,11 @@ export class AnnotationListComponent implements OnInit {
     this.newannotation.emit();
   }
 
-  editCaption(annotation:Annotation):void {
-    this.annotationService.editAnnotationCaption(annotation.id, annotation.caption);
+  editCaption(i:number):void {
+    this.annotationService.editAnnotationCaption(this.annotations[i].id, this.annotations[i].caption);
+  }
+
+  removeAnnotation(i:number):void {
+    this.annotationService.removeAnnotation(this.annotations[i].id);
   }
 }
